@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitBuddy | AI Fitness Plan Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="/" class="brand">Fit<span>Buddy</span></a>
+        <nav class="nav-links">
+            <a href="/">Home</a>
+            <a href="/view-all-users">Admin Dashboard</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Personalized Fitness Blueprint</h2>
+            <p class="subtitle">Complete your physical parameters to generate a goal-aligned 7-day routine.</p>
+
+            <form action="/generate-workout" method="POST">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="username">Full Name</label>
+                        <input type="text" id="username" name="username" placeholder="Alex Morgan" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user_id">Unique User ID</label>
+                        <input type="text" id="user_id" name="user_id" placeholder="alex101" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Age (Years)</label>
+                        <input type="number" id="age" name="age" min="12" max="100" placeholder="26" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="weight">Weight (kg)</label>
+                        <input type="number" id="weight" name="weight" min="30" max="250" placeholder="72" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="goal">Primary Objective</label>
+                        <select id="goal" name="goal" required>
+                            <option value="Weight Loss">Weight Loss & Fat Reduction</option>
+                            <option value="Muscle Gain">Muscle Hypertrophy & Strength</option>
+                            <option value="General Wellness">General Wellness & Mobility</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="intensity">Training Intensity</label>
+                        <select id="intensity" name="intensity" required>
+                            <option value="Low">Low (Beginner / Deload)</option>
+                            <option value="Medium" selected>Medium (Moderate Intensity)</option>
+                            <option value="High">High (Advanced / Athlete)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width" style="margin-top: 0.5rem;">
+                        <button type="submit" class="btn-primary">Generate 7-Day Plan</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
